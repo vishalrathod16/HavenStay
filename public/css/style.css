@@ -1,0 +1,140 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+.fa-regular {
+  font-size: 1.5rem;
+  color: #fe424d;
+}
+.nav-link {
+  color: #222222 !important;
+}
+/* FOOTER */
+.f-links a {
+  color: #222222;
+  text-decoration: none;
+}
+.f-links a:hover {
+  text-decoration: underline;
+}
+.f-info {
+  display: flex;
+  height: 7rem;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.f-socials,
+.f-links {
+  width: 100%;
+}
+.f-socials i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+/* card */
+.listing-card {
+  border: none;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem;
+  width: 100%;
+}
+.card-body {
+  padding: 0;
+}
+.card-body p {
+  font-weight: 400;
+}
+.listing-link {
+  text-decoration: none;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+/* ADD PAGE */
+.add-btn {
+  background-color: #fe424d;
+  border: none;
+}
+/* EDIT PAGE */
+.edit-btn {
+  background-color: #fe424d;
+  border: none;
+}
+/* SHOW PAGE */
+.show-img {
+  height: 30vh;
+}
+.btns {
+  display: flex;
+}
+/* for map */
+#map {
+  width: 80vh;
+  height: 400px;
+}
+#menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  z-index: 10;
+}
+
+#filters button {
+  border: none;
+  background-color: white;
+}
+/* CheckBox in Add Listing */
+.btn-check + .btn {
+  border-color: gray;
+  color: gray;
+}
+
+.btn-check:checked + .btn {
+  border-color: #fe424d;
+  color: white;
+  background-color: #fe424d;
+}
+
+.btn-check + .btn:hover {
+  border-color: #fe424d;
+  color: white;
+  background-color: #fe424d;
+}
+/* filters below nav */
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter {
+  text-align: center;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  opacity: 0.7;
+}
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.filter p {
+  font-size: 0.8rem;
+}

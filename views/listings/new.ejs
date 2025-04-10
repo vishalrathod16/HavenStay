@@ -1,0 +1,130 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+  <form
+    method="post"
+    action="/listings"
+    class="needs-validation"
+    novalidate
+    enctype="multipart/form-data"
+  >
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h3 class="mt-3 mb-3">Create new listing</h3>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="list[title]"
+            placeholder="Add a title"
+            required
+          />
+        </div>
+        <label for="description" class="form-label">Description</label>
+        <div class="mb-3">
+          <textarea
+            type="text"
+            id="description"
+            name="list[description]"
+            placeholder="Description"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Categories</label>
+          <br />
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic checkbox toggle button group"
+          >
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck1"
+              autocomplete="off"
+              name="list[filters]"
+              value="room"
+            />
+            <label class="btn btn-outline-primary" for="btncheck1">Room</label>
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck2"
+              autocomplete="off"
+              name="list[filters]"
+              value="city"
+            />
+            <label class="btn btn-outline-primary" for="btncheck2"
+              >City Area</label
+            >
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck3"
+              name="list[filters]"
+              value="mountain"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btncheck3"
+              >Hilly Area</label
+            >
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck4"
+              autocomplete="off"
+              name="list[filters]"
+              value="pool"
+            />
+            <label class="btn btn-outline-primary" for="btncheck4">Pool</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          <input type="file" name="list[image]" required class="form-control" />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              name="list[price]"
+              class="form-control"
+              placeholder="1,200"
+              required
+            />
+            <div class="invalid-feedback">Enter valid number</div>
+          </div>
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="list[country]"
+              placeholder="India"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="list[location]"
+            placeholder="Mahabubnagar,Telangana"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <button class="btn btn-dark add-btn mt-3 mb-3">submit</button>
+      </div>
+    </div>
+  </form>
+</body>
