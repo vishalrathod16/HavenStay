@@ -11,6 +11,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/expressError.js");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -26,6 +27,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
+const mongoUrl = "mongodb://127.0.0.1:27017/havenstay";
+const dbUrl = process.env.ATLAS_URL;
 
 main()
   .then(() => {
@@ -34,10 +37,19 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/havenstay");
+  // await mongoose.connect(mongoUrl);
+  await mongoose.connect(dbUrl);
 }
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  touchAfter: 24 * 3600,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+});
 const sessionOptions = {
+  store: store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
@@ -63,6 +75,7 @@ app.use((req, res, next) => {
   res.locals.curUser = req.user;
   next();
 });
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
