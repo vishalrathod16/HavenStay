@@ -44,11 +44,12 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  filters: {
-    type: [String],
-    enum: ["room", "city", "mountain", "pool"],
-    default: [],
-  },
+  filters: [
+    {
+      type: String,
+      enum: ["room", "city", "mountain", "pool"],
+    },
+  ],
 });
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
