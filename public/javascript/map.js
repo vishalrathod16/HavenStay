@@ -23,7 +23,6 @@ const inputs = layerList.getElementsByTagName("input");
 
 for (const input of inputs) {
   input.onclick = (layer) => {
-    console.log(layer.target);
     const layerId = layer.target.id;
     map.setStyle("mapbox://styles/mapbox/" + layerId);
   };

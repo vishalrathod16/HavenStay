@@ -15,9 +15,7 @@ module.exports.filter = wrapAsync(async (req, res) => {
     req.flash("error", "No Places with the selected filter...");
     return res.redirect("/listings");
   }
-
   const listings = await Listing.find({ filters: filter });
-
   res.render("listings/index.ejs", { allListings: listings });
 });
 module.exports.search = wrapAsync(async (req, res) => {
@@ -92,7 +90,6 @@ module.exports.saveEditChanges = wrapAsync(async (req, res) => {
 module.exports.deleteListing = wrapAsync(async (req, res) => {
   let { id } = req.params;
   let listing = await Listing.findByIdAndDelete(id);
-  // console.log(listing);
   req.flash("success", "Listing Deleted Successfully");
   res.redirect("/listings");
 });

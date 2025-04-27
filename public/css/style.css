@@ -11,8 +11,9 @@ body {
   height: 5rem;
   background-color: white;
 }
-.fa-regular {
-  font-size: 1.5rem;
+.Title {
+  margin-top: 1rem;
+  font-size: 1.55rem;
   color: #fe424d;
 }
 .nav-link {

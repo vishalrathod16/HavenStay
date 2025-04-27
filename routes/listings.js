@@ -36,7 +36,6 @@ router.put(
   validateList,
   controller.saveEditChanges
 );
-
 //DELETE OPTION
 router.delete("/:id", isLoggedIn, isValidOwner, controller.deleteListing);
 
